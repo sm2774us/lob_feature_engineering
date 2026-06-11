@@ -191,7 +191,7 @@ $$\mathcal{L}_{AE} = \|x - \hat{x}\|_2^2 + \beta \|z\|_1 \quad \text{(sparse aut
 
 The latent code $z$ with $d \ll 40$ becomes the feature vector for the signal classifier. At production quant firms, $d \in [8, 16]$ preserves 90%+ of reconstruction quality.
 
-**ReLU Rationale:** ReLU activations ($\max(0, z)$) enforce sparsity in the latent representation — most hidden units are inactive for any given LOB snapshot, creating disentangled features where each latent dimension captures a distinct liquidity regime.
+**ReLU Rationale:** ReLU activations ( $\max(0, z)$ ) enforce sparsity in the latent representation — most hidden units are inactive for any given LOB snapshot, creating disentangled features where each latent dimension captures a distinct liquidity regime.
 
 [🔝 Back to Top](#-table-of-contents)
 
@@ -247,7 +247,13 @@ The ternary label at time $t$ with forward horizon $\Delta$ ticks:
 
 $$\text{target}_t = \begin{cases} \text{Down} & \text{if } (\text{mid}_{t+\Delta} - \text{mid}_t) < -\theta \\ \text{Stable} & \text{if } -\theta \leq (\text{mid}_{t+\Delta} - \text{mid}_t) \leq \theta \\ \text{Up} & \text{if } (\text{mid}_{t+\Delta} - \text{mid}_t) > \theta \end{cases}$$
 
-where $\text{mid}_t = (p_{b,t} + p_{a,t}) / 2$ and $\theta$ is the threshold (typically 0.5–2 tick sizes).
+where:
+
+$$
+\text{mid}_t = (p_{b,t} + p_{a,t}) / 2
+$$
+
+and $\theta$ is the threshold (typically 0.5–2 tick sizes).
 
 **Smoothed variant (production preferred):**
 
@@ -363,7 +369,9 @@ $$(\mathcal{S}, \mathcal{A}, \mathcal{R}, \mathcal{T}, \gamma)$$
 
 $$s_t = [\text{LOB features}_t, \text{position}_t, \text{inventory risk}_t, \hat{p}_t^{\text{Up}}, \hat{p}_t^{\text{Down}}]$$
 
-**Action space $\mathcal{A}$:** $\{$Buy Market, Sell Market, Post Bid, Post Ask, Cancel, Hold$\}$
+**Action space $\mathcal{A}$:**
+
+$$\lbrace Buy Market, Sell Market, Post Bid, Post Ask, Cancel, Hold \rbrace$$
 
 **Reward function:**
 
@@ -470,7 +478,7 @@ $$\text{Sharpe}_{\text{annualized}} = \frac{\mu_{\text{daily}} \cdot \sqrt{252}}
 - No lookahead: all features computed on $t-1$ data; label computed from $t+\Delta$ data
 - Walk-forward cross-validation with 20-day training, 5-day test windows
 - Transaction cost model: $c = \text{half-spread} + \text{market impact}$; use the Almgren-Chriss model for impact
-- Turnover cap: $|\text{position}_{t} - \text{position}_{t-1}| \leq \text{POV} \cdot \text{ADV}_t$
+- Turnover cap: $\\|\text{position}_{t} - \text{position}_{t-1}\\| \leq \text{POV} \cdot \text{ADV}_t$
 
 [🔝 Back to Top](#-table-of-contents)
 
