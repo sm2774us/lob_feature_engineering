@@ -71,11 +71,15 @@ PRODUCTION SYSTEMS          P1 – P2    Inference, backtesting          Design-
 
 The bid-side OFI contribution at time $t$:
 
-$$OF_{b,t} = \begin{cases} v_{b,t} & \text{if } p_{b,t} > p_{b,t-1} \\ v_{b,t} - v_{b,t-1} & \text{if } p_{b,t} = p_{b,t-1} \\ -v_{b,t} & \text{if } p_{b,t} < p_{b,t-1} \end{cases}$$
+$$OF_{b,t} = \begin{cases} v_{b,t} & \text{if } p_{b,t} > p_{b,t-1} \\
+v_{b,t} - v_{b,t-1} & \text{if } p_{b,t} = p_{b,t-1} \\
+-v_{b,t} & \text{if } p_{b,t} < p_{b,t-1} \end{cases}$$
 
 The ask-side OFI contribution:
 
-$$OF_{a,t} = \begin{cases} -v_{a,t} & \text{if } p_{a,t} > p_{a,t-1} \\ v_{a,t} - v_{a,t-1} & \text{if } p_{a,t} = p_{a,t-1} \\ v_{a,t} & \text{if } p_{a,t} < p_{a,t-1} \end{cases}$$
+$$OF_{a,t} = \begin{cases} -v_{a,t} & \text{if } p_{a,t} > p_{a,t-1} \\
+v_{a,t} - v_{a,t-1} & \text{if } p_{a,t} = p_{a,t-1} \\
+v_{a,t} & \text{if } p_{a,t} < p_{a,t-1} \end{cases}$$
 
 The aggregate OFI:
 
@@ -245,7 +249,9 @@ TYPICAL PC INTERPRETATION FOR EQUITY FUTURES LOB
 
 The ternary label at time $t$ with forward horizon $\Delta$ ticks:
 
-$$\text{target}_t = \begin{cases} \text{Down} & \text{if } (\text{mid}_{t+\Delta} - \text{mid}_t) < -\theta \\ \text{Stable} & \text{if } -\theta \leq (\text{mid}_{t+\Delta} - \text{mid}_t) \leq \theta \\ \text{Up} & \text{if } (\text{mid}_{t+\Delta} - \text{mid}_t) > \theta \end{cases}$$
+$$\text{target}_t = \begin{cases} \text{Down} & \text{if } (\text{mid}_{t+\Delta} - \text{mid}_t) < -\theta \\
+\text{Stable} & \text{if } -\theta \leq (\text{mid}_{t+\Delta} - \text{mid}_t) \leq \theta \\
+\text{Up} & \text{if } (\text{mid}_{t+\Delta} - \text{mid}_t) > \theta \end{cases}$$
 
 where:
 
