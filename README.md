@@ -400,7 +400,7 @@ The PCA pipeline for production LOB systems:
 3. **Select $k$** components via 90% explained variance criterion
 4. **Monitor** PC loadings for structural breaks — a sudden shift in PC1 loadings signals a microstructure regime change
 
-$$k^* = \min\left\{k : \frac{\sum_{j=1}^k \sigma_j^2}{\sum_{j=1}^{40} \sigma_j^2} \geq 0.90\right\}$$
+$$k^{\*} = \min \lbrace k : \frac{\sum_{j=1}^k \sigma_j^2}{\sum_{j=1}^{40} \sigma_j^2} \geq 0.90 \rbrace$$
 
 [🔝 Back to Top](#-table-of-contents)
 
