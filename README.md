@@ -478,7 +478,11 @@ $$\text{Sharpe}_{\text{annualized}} = \frac{\mu_{\text{daily}} \cdot \sqrt{252}}
 - No lookahead: all features computed on $t-1$ data; label computed from $t+\Delta$ data
 - Walk-forward cross-validation with 20-day training, 5-day test windows
 - Transaction cost model: $c = \text{half-spread} + \text{market impact}$; use the Almgren-Chriss model for impact
-- Turnover cap: $\\|\text{position}_{t} - \text{position}_{t-1}\\| \leq \text{POV} \cdot \text{ADV}_t$
+- Turnover cap:
+
+$$
+\\|\text{position}_{t} - \text{position}_{t-1}\\| \leq \text{POV} \cdot \text{ADV}_t
+$$
 
 [🔝 Back to Top](#-table-of-contents)
 
