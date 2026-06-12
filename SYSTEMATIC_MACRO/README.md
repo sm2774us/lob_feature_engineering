@@ -75,9 +75,13 @@ PRODUCTION VALIDATION          E11        Walk-forward IC, signal decay         
 
 Every macro data record carries two timestamps:
 
-$$\text{valid\_time} = \text{period the data describes} \quad \text{(e.g., May CPI = May)}$$
+```math
+\text{valid\_time} = \text{period the data describes} \quad \text{(e.g., May CPI = May)}
+```
 
-$$\text{knowledge\_time} = \text{when the firm could first act on it} \quad \text{(e.g., June 12, 08:30 EST release)}$$
+```math
+\text{knowledge\_time} = \text{when the firm could first act on it} \quad \text{(e.g., June 12, 08:30 EST release)}
+```
 
 Feature computation uses **knowledge\_time** exclusively. Forward-fill, interpolation, and any form of temporal alignment that leaks knowledge\_time are strictly prohibited.
 
