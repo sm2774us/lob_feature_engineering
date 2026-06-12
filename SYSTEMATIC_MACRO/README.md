@@ -222,7 +222,7 @@ $$\text{CSMOM}_{i,t}^{(L)} = \text{rank}_{t}\left(R_{i,t-L:t}\right) - \frac{N+1
 
 $$\widetilde{\text{CSMOM}}_{i,t} = \text{CSMOM}_{i,t} - \frac{\text{Cov}(\text{CSMOM}, \text{TSMOM})}{\text{Var}(\text{TSMOM})} \cdot \text{TSMOM}_{i,t}$$
 
-This isolates the incremental cross-sectional alpha not already captured by the time-series signal — a technique drawn directly from Gram-Schmidt signal orthogonalization (§4 of SYSTEMATIC\_MACRO.md).
+This isolates the incremental cross-sectional alpha not already captured by the time-series signal — a technique drawn directly from Gram-Schmidt signal orthogonalization.
 
 [🔝 Back to Top](#-table-of-contents)
 
