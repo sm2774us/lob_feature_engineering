@@ -414,7 +414,7 @@ $$\hat{\Sigma} w_k = \lambda_k w_k \quad k = 1, \dots, K$$
 
 **Step 3 — Optimal component selection:**
 
-$$k^{\*} = \min\left\{k : \frac{\sum_{j=1}^k \lambda_j}{\sum_{j=1}^K \lambda_j} \geq 0.90\right\}$$
+$$k^{\*} = \min \lbrace k : \frac{\sum_{j=1}^k \lambda_j}{\sum_{j=1}^K \lambda_j} \geq 0.90 \rbrace$$
 
 **Step 4 — Rolling refitting.** Refit PCA on a 60-day rolling window; check loading stability via cosine similarity between consecutive PC vectors:
 
